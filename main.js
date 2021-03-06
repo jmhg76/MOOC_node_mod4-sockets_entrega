@@ -90,6 +90,7 @@ let server = net.createServer(
                 else if (['df', 'fd'].includes(cmd)) { await favs.delete(rl); } //
                 else if ('e' === cmd) {
                     rl.log('Bye!');
+                    rl.close(); // ¿Por qué hay que hacerlo?
                     socket.end(`Vuelve pronto`);
                 } else {
                     rl.log('UNSUPPORTED COMMAND!');
